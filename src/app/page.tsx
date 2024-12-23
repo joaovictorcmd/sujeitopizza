@@ -4,6 +4,7 @@ import logoImg from '/public/logo.svg'
 import Link from 'next/link';
 import { api } from '@/services/api';
 import { redirect } from 'next/navigation';
+import { cookies } from 'next/headers';
 
 export default function Home() {
 
@@ -23,7 +24,21 @@ export default function Home() {
         password
       })
 
+      if (!response.data.token) {
+        return;
+      }
+
       console.log(response.data);
+
+      const expressTime = 60 * 60 * 24 * 30;
+      const cookieStore = await cookies();
+
+      cookieStore.set("session", response.data.token, {
+        maxAge: expressTime,
+        path: "/",
+        httpOnly: false,
+        secure: process.env.NODE_ENV === "production"
+      });
 
     } catch (error) {
       console.log(`Error: ${error}`);
