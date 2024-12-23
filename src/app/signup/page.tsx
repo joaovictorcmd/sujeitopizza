@@ -20,11 +20,11 @@ export default function Signup() {
         }
 
         try {
-            await api.post("/users"), {
+            await api.post("/users", {
                 name,
                 email,
                 password
-            }
+            })
         } catch (error) {
             console.log(`Error: ${error}`);
             return;
