@@ -11,8 +11,6 @@ export default async function Product() {
         }
     })
 
-
-
     return (
         <Form categories={response.data} />
     );

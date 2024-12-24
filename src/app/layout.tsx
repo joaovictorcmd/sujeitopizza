@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import {Inter} from "next/font/google"
+import { Inter } from "next/font/google"
 import "./globals.scss";
+import { Toaster } from 'sonner'
 
-const inter = Inter({subsets: ["latin"]});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Sujeito Pizza - A melhor pizzaria",
@@ -17,6 +18,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
+        <Toaster
+          richColors
+          position="bottom-right"
+        />
         {children}
       </body>
     </html>
