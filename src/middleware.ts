@@ -33,6 +33,7 @@ async function validateToken(token: string | null) {
 
     return true;
   } catch (err) {
+    console.log(err);
     return false;
   }
 }

@@ -82,6 +82,7 @@ export function OrderProvider({ children }: OrderProviderProps) {
                 }
             })
         } catch (error) {
+            console.log(error);
             toast.error("Falha ao finalizar o pedido!");
             return;
         }
