@@ -7,7 +7,11 @@ import { OrderContext } from "@/providers/order";
 
 export function ModalOrder() {
 
-    const { onRequestClose, order } = useContext(OrderContext);
+    const { onRequestClose, order, finishOrder } = useContext(OrderContext);
+
+    async function handleFinishOrder() {
+        await finishOrder(order[0].order.id);
+    }
 
     return (
         <dialog className={styles.dialogContainer}>
@@ -47,7 +51,10 @@ export function ModalOrder() {
                         ))
                     }
 
-                    <button className={styles.buttonOrder}>
+                    <button
+                        className={styles.buttonOrder}
+                        onClick={handleFinishOrder}
+                    >
                         Concluir pedido
                     </button>
 
