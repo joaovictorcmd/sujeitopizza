@@ -4,7 +4,7 @@ import { OrderProps } from "@/lib/order.type"
 import styles from "./styles.module.scss"
 import { RefreshCw } from "lucide-react"
 import { ModalOrder } from "../modal"
-import { useContext } from "react"
+import { use } from "react"
 import { OrderContext } from "@/providers/order"
 import { useRouter } from "next/navigation"
 import { toast } from "sonner"
@@ -15,7 +15,7 @@ interface Props {
 
 export function Orders({ orders }: Props) {
 
-    const { isOpen, onRequestOpen } = useContext(OrderContext);
+    const { isOpen, onRequestOpen } = use(OrderContext);
     const router = useRouter();
 
     async function handleDetailOrder(order_id: string) {

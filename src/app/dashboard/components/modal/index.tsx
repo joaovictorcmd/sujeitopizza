@@ -2,12 +2,12 @@
 
 import { X } from "lucide-react";
 import styles from "./styles.module.scss";
-import { useContext } from "react";
+import { use } from "react";
 import { OrderContext } from "@/providers/order";
 
 export function ModalOrder() {
 
-    const { onRequestClose, order, finishOrder } = useContext(OrderContext);
+    const { onRequestClose, order, finishOrder } = use(OrderContext);
 
     async function handleFinishOrder() {
         await finishOrder(order[0].order.id);
