@@ -3,6 +3,8 @@ import { Orders } from "./components/orders";
 import { getCookieServer } from "@/lib/cookieServer";
 import { OrderProps } from "@/lib/order.type";
 
+export const dynamic = "force-dynamic";
+
 async function getOrders(): Promise<OrderProps[] | []> {
     try {
         const token = await getCookieServer();

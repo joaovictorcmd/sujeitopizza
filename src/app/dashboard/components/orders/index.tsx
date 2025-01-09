@@ -3,7 +3,7 @@
 import { OrderProps } from "@/lib/order.type"
 import styles from "./styles.module.scss"
 import { RefreshCw } from "lucide-react"
-import { ModalOrder } from "../modal"
+import { ModalOrder } from "@/app/dashboard/components/modal"
 import { use } from "react"
 import { OrderContext } from "@/providers/order"
 import { useRouter } from "next/navigation"
