@@ -19,6 +19,8 @@ export default function Signup() {
             return;
         }
 
+        console.log(`Nome: ${name}, Email: ${email}, Senha: ${password}`);
+
         try {
             await api.post("/users", {
                 name,
