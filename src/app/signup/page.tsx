@@ -22,6 +22,8 @@ export default function Signup() {
         console.log(`Nome: ${name}, Email: ${email}, Senha: ${password}`);
 
         try {
+            console.log(`${process.env.NEXT_PUBLIC_API}/users`)
+            
             await api.post("/users", {
                 name,
                 email,
