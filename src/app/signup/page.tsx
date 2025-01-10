@@ -25,8 +25,8 @@ export default function Signup() {
                 email,
                 password
             })
-        } catch (error) {
-            console.log(`Error: ${error}`);
+        } catch (err) {
+            console.log(`Error: ${err}`);
             return;
         }
 
