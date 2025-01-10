@@ -27,6 +27,8 @@ export default function Signup() {
                 email,
                 password
             })
+
+            console.log("Usuário cadastrado com sucesso!");
         } catch (err) {
             console.log(`Error: ${err}`);
             return;
